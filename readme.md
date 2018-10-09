@@ -32,21 +32,21 @@ Type: `Object`
 
 ##### url
 
-Endpoint where to forward token
+Endpoint where to forward token as `Bearer`
 
 Type: `String`
 
-##### errorHandler
+##### handler
 
-If passed has `err` as argument, otherwise `next(err)`
+Asyncronous Function to process `token`
+
+Type: `Function`
 
 ```js
 {
-  errorHandler: err => console.log(err)
+  handler: async token => Promise.resolve(token)
 }
 ```
-
-Type: `Function`
 
 ##### getToken
 
@@ -61,3 +61,25 @@ Required: true
   getToken: req => req.body.token,
 }
 ```
+
+##### key
+
+Key to search when catching token if no `getToken` passed
+
+After check token as Authorization Bearer, will check as `query[key]`, `cookies[key]` and `body[key]`. That automatich checks will berun if no `getToken` option is passed.
+
+Type: `String`
+
+Default: `refreshToken`
+
+##### errorHandler
+
+If passed has `err` as argument, otherwise `next(err)`
+
+```js
+{
+  errorHandler: err => console.log(err)
+}
+```
+
+Type: `Function`
