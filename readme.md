@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  [Express](https://expressjs.com/) Middleware to Intercept token and make stuff, like refresh it.
+  <a href="https://expressjs.com/">Express</a> Middleware to Intercept token and make stuff, like refresh it.
 </p>
 
 ## Install
