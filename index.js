@@ -57,10 +57,8 @@ const intercept = ({
           res.set('x-access-token', req.user.accessToken)
           res.set('x-refresh-token', req.user.refreshToken)
         }
-        next()
-      } else {
-        throw 'No token passed'
       }
+      next()
     } catch (err) {
       console.log({ err })
       typeof errorHandler === 'function' ? errorHandler(err) : next(err)
