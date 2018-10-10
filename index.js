@@ -60,7 +60,6 @@ const intercept = ({
       }
       next()
     } catch (err) {
-      console.log({ err })
       typeof errorHandler === 'function' ? next(errorHandler(err)) : next(err)
     }
   }
