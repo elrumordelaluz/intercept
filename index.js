@@ -49,7 +49,7 @@ const intercept = ({
         }
 
         req.user = user
-        if (user) {
+        if (user && user.accessToken && user.refreshToken) {
           res.set(
             'Access-Control-Expose-Headers',
             'x-access-token, x-refresh-token'
