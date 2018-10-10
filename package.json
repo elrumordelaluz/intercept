@@ -20,5 +20,16 @@
   "license": "MIT",
   "dependencies": {
     "node-fetch": "2.2.0"
+  },
+  "devDependencies": {
+    "ava": "0.25.0",
+    "express": "4.16.3",
+    "supertest": "3.3.0"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "xo": {
+    "esnext": true
   }
 }
