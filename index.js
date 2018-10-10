@@ -61,7 +61,7 @@ const intercept = ({
       next()
     } catch (err) {
       console.log({ err })
-      typeof errorHandler === 'function' ? errorHandler(err) : next(err)
+      typeof errorHandler === 'function' ? next(errorHandler(err)) : next(err)
     }
   }
 }
